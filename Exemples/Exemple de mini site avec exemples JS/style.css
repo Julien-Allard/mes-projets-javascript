@@ -1,0 +1,12 @@
+html, body {
+  background: #3A1C71;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFAF7B, #D76D77, #3A1C71);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFAF7B, #D76D77, #3A1C71); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#cover {
+  background-image: url('https://believemy.com/uploads/ab8c0c9086bec2194e1a042ba8e8ba13_86b0896ad83153145ed09dadb4d38ad6.png');
+  background-size: cover;
+  background-position: center;
+}

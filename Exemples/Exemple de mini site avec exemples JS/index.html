@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row justify-content-center my-5">
+    <div class="col-lg-7 col-md-8">
+      <div id="cover" class="text-center p-3">
+        <img src="https://believemy.com/pictures/grey_small.png" alt="logo" />
+      </div>
+      <div class="p-5 shadow" style="background-color: #ffffff">
+        <p>L'objet Window a pour fonction d'englober l'ensemble des fonctions, et autres objets de JavaScript. C'est de lui que tout part.</p>
+        <p>Voici une petite démonstration de quelques fonctions bien utiles que propose cet objet. <b>Essayez ces options dans l'ordre ;)</b></p>
+        
+        <p class="mt-3 font-weight-bold">Ouvrir une fenêtre</p>
+        <button id="ouvrir" class="form-control">Essayer (window.open)</button>
+        <details>
+            <summary class="bg-light border pl-3 py-2 mt-1">
+              Voir le code
+            </summary>
+            <code class="bg-dark text-white p-3 mb-3 d-block">
+              window.open('https://believemy.com');
+            </code>
+        </details>
+        
+        <p class="mt-3 font-weight-bold">Redimensionner une fenêtre</p>
+        <button id="redimensionner" onClick="redimensionner()" class="form-control">Essayer (window.resizeTo)</button>
+        <details>
+            <summary class="bg-light border pl-3 py-2 mt-1">
+              Voir le code
+            </summary>
+            <code class="bg-dark text-white p-3 mb-3 d-block">
+              let fenetre = window.open('https://believemy.com', '', 'width=900, height=700');<br><br>
+              function resize() {
+                <div class="ml-3">fenetre.resizeTo(700, 470);</div>
+              }
+            </code>
+        </details>
+        
+        <p class="mt-3 font-weight-bold">Fermer une fenêtre</p>
+        <button id="redimensionner" onClick="fermer()" class="form-control">Essayer (window.close)</button>
+        <details>
+            <summary class="bg-light border pl-3 py-2 mt-1">
+              Voir le code
+            </summary>
+            <code class="bg-dark text-white p-3 mb-3 d-block">
+              let fenetre = window.open('https://believemy.com', '', 'width=900, height=700');<br><br>
+              function resize() {
+                <div class="ml-3">fenetre.close();</div>
+              }
+            </code>
+        </details>
+        <div class="alert alert-secondary mt-3">Vous souhaitez plus d'exemples ? Allez <a href="https://developer.mozilla.org/fr/docs/Web/API/Window" target="_blank">sur ce lien</a> !</div>
+      </div>
+    </div>
+  </div>
+</div>
