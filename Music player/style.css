@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  font-family: "lato", sans-serif;
+  background-image: linear-gradient(0deg, rgb(247, 247, 247) 23.8%, rgb(252, 221, 221) 92%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.music-container {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 20px 20px 0 rgba(252, 169, 169, 0.6);
+  display: flex;
+  padding: 20px 30px;
+  min-width: 372px;
+  position: relative;
+  margin: 100px 0 0 0;
+  z-index: 10;
+}
+
+.img-container {
+  width: 110px;
+  position: relative;
+}
+
+.img-container::after { /* pour créer l'illusion d'un "trou" afin que l'image ressemble à un disque */
+  content: "";
+  background-color: white;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  left: 50%;
+  bottom: 70%;
+  transform: translate(-50%, -50%); /* permet de centrer correctement le "rond" blanc, car le positionnement absolute part du coin en haut à gauche du conteneur */
+  border-radius: 50%;
+}
+
+.img-container img {
+  width: inherit;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover; /* l'image remplit le conteneur, ce qui dépasse est rogné */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  animation: rotate 3s linear infinite;
+  animation-play-state: paused; /* on met l'animation en pause, sera réactivée avec la lecture de la musique (en JS) */
+}
+
+.music-container.play .img-container img {
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.action-btn {
+  background-color: white;
+  border: 0;
+  color: #dfdbdf;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 20px;
+}
+
+.action-btn-big {
+  color: #cdc2d0;
+  background-color: white;
+  border: 0;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.action-btn:hover, .action-btn-big:hover {
+  color: grey;
+}
+
+.fa-pause {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.action-btn:focus {
+  outline: 0;
+}
+
+.music-info {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px 15px 0 0;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: calc(100% - 40px);
+  opacity: 0;
+  transform: translateY(0%);
+  padding: 10px 10px 10px 150px;
+  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+}
+
+.music-info h4 {
+  margin: 0;
+}
+
+.music-container.play .music-info {
+  opacity: 1;
+  transform: translateY(-100%);
+}
+
+.progress-container {
+  background: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+  height: 4px;
+  width: 100%;
+}
+
+.progress {
+  background-color: #fe8daa;
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.timer {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.playlist-container {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 20px 20px 0 rgba(252, 169, 169, 0.6);
+  padding: 20px 30px;
+  position: relative;
+  margin: 50px 0;
+  width: 372px;
+}
+
+.playlist-title i {
+  color: #cdc2d0;
+  font-size: 25px;
+  margin-right: 10px;
+  transition: transform 0.3s ease-in;
+}
+
+.playlist-container.open .playlist-title i {
+  transform: rotate(90deg);
+}
+
+.playlist-title {
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.playlist-songs {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 0 0 15px 15px;
+  position: absolute;
+  top: 65px;
+  left: 20px;
+  width: calc(100% - 40px);
+  opacity: 0;
+  transform: scale(0, 1);
+  transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+}
+
+.playlist-container.open .playlist-songs {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.song-summary {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  padding : 2px 0;
+  line-height: 25px;
+  justify-content: center;
+}
+
+.song-summary:hover {
+  font-weight: bold;
+}
