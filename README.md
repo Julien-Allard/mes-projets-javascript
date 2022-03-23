@@ -1,5 +1,4 @@
-# Tous mes projets JavaScript créés à ce jour
+# Projets JavaScript vanilla
 
-Ces différentes projets ont été créés lors de mes différentes formations. Inspiré par mes formateurs ou différents tutoriaux croisés sur le web =)
-
-__Toute nouvelle idée est bonne à prendre !__
+Un recueil des mes premiers projets JavaScript, faits lors du début de mon apprentissage.
+Ces projets ont tous été faits avec JS vanilla.
